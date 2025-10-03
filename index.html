@@ -38,19 +38,42 @@
                     <img src="./assets/logo.jpeg" alt="Logo PetLink, círculo azul con huella blanca en el centro, transmite confianza y tecnología, ubicado junto al nombre PetLink en la barra de navegación" class="h-10 rounded-full">
                     <span class="text-2xl font-bold text-primary">PetLink</span>
                 </div>
-                <div class="hidden md:flex space-x-8">
+                <!-- Desktop links -->
+                <div class="hidden md:flex space-x-8 items-center">
                     <a href="#inicio" class="text-gray-700 hover:text-primary transition">Inicio</a>
                     <a href="#funcionalidades" class="text-gray-700 hover:text-primary transition">Funcionalidades</a>
                     <a href="#beneficios" class="text-gray-700 hover:text-primary transition">Beneficios</a>
                     <a href="#contacto" class="text-gray-700 hover:text-primary transition">Contacto</a>
+                    <a href="https://petwatch.netlify.app/login" class="ml-4 px-5 py-2 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition shadow">Iniciar sesión</a>
                 </div>
-                <button class="md:hidden text-gray-700">
+                <!-- Mobile menu button -->
+                <button id="menu-btn" class="md:hidden flex items-center focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
         </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden fixed top-16 left-0 w-full bg-white shadow-lg border-t border-gray-200 hidden z-40">
+            <div class="flex flex-col space-y-2 px-6 py-4">
+                <a href="#inicio" class="text-gray-700 hover:text-primary transition">Inicio</a>
+                <a href="#funcionalidades" class="text-gray-700 hover:text-primary transition">Funcionalidades</a>
+                <a href="#beneficios" class="text-gray-700 hover:text-primary transition">Beneficios</a>
+                <a href="#contacto" class="text-gray-700 hover:text-primary transition">Contacto</a>
+                <a href="https://petwatch.netlify.app/login" class="px-5 py-2 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition shadow mt-2">Iniciar sesión</a>
+            </div>
+        </div>
+        <script>
+            // Simple mobile menu toggle
+            document.addEventListener('DOMContentLoaded', function () {
+                const menuBtn = document.getElementById('menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                menuBtn.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            });
+        </script>
     </nav>
 
     <!-- Hero Section -->
